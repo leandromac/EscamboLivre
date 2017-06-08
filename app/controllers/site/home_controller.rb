@@ -1,5 +1,8 @@
 class Site::HomeController < ApplicationController
     layout "site"
-  def index
-  end
+
+    def index
+        @categories = Category.all
+    end
+
 end
