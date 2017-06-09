@@ -1,0 +1,37 @@
+<div class="col-lg-4">
+    <div class="panel panel-primary">
+        <div class="panel-heading text-center">
+            <%= action %>
+        </div>
+        <!-- /.panel-heading -->
+        <div class="panel-body">
+            <div class="table-responsive">
+            <%= form_for([:backoffice, @category]) do |f| %>
+                <div class="form-group">
+                    <%= f.text_field :description, class: 'form-control', placeholder: 'Description...'  %>
+                </div>
+                <button type="submit" class="btn btn-outline btn-primary btn-block">Create a new category</button>
+            <% end %>
+            </div>
+            <!-- /.table-responsive -->
+        </div>
+        <!-- /.panel-body -->
+    </div>
+    <!-- /.panel -->
+    <% if notice %>
+        <div class="alert alert-success alert-dismissable">
+            <button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
+            <%= notice %>
+        </div>
+    <% end %>
+    <% if @category.errors.any? %>
+        <div class="alert alert-danger alert-dismissable">
+            <button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
+            <ul>
+            <% @category.errors.full_messages.each do |message| %>
+                <li><%= message %></li>
+            <% end %>
+            </ul>
+        </div>
+    <% end %>
+</div>

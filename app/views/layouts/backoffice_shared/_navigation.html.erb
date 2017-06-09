@@ -22,10 +22,11 @@
                         <li><a href="#"><i class="fa fa-gear fa-fw"></i> Settings</a>
                         </li>
                         <li class="divider"></li>
-                        <%= link_to destroy_admin_session_path, method: :delete do %>
-                            <i class="fa fa-sign-out fa-fw"></i> Sair
-                        <% end %>
-
+                        <li>
+                            <%= link_to destroy_admin_session_path, method: :delete do %>
+                                <i class="fa fa-sign-out fa-fw"></i> Sair
+                            <% end %>
+                        </li>
                     </ul>
                     <!-- /.dropdown-user -->
                 </li>
@@ -49,7 +50,14 @@
                         </li>
                         -->
                         <li>
-                            <a href="index.html"><i class="fa fa-dashboard fa-fw"></i> Dashboard</a>
+                            <%= link_to backoffice_path do %>
+                                <i class="fa fa-dashboard fa-fw"></i> Dashboard
+                            <% end %>
+                        </li>
+                        <li>
+                            <%= link_to backoffice_categories_path do %>
+                                <i class="fa fa-th-list fa-fw"></i> Categories
+                            <% end %>
                         </li>
                         <!-- LEVEL MENU
                         <li>
