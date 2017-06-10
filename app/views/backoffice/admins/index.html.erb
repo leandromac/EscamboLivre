@@ -12,7 +12,7 @@
                             <tr>
                                 <th>ID</th>
                                 <th>Email</th>
-                                <th class="text-center" style="width: 41px"></th>
+                                <th class="text-center" style="width: 81px"></th>
                             </tr>
                         </thead>
                         <tbody>
@@ -23,7 +23,16 @@
                                 <td>
                                     <%= link_to edit_backoffice_admin_path(admin.id), class: "btn btn-warning btn-circle" do %>
                                         <i class="fa fa-pencil"></i>
-                                <% end %>
+                                    <% end %>
+                                    <% if current_admin.id != admin.id %>
+                                        <%= link_to backoffice_admin_path(admin.id), method: :delete, class: "btn btn-danger btn-circle", data: {confirm: "Are you sure to want delete: <b>#{admin.email}</b>?"} do %>
+                                            <i class="fa fa-trash"></i>
+                                            <% end %>
+                                    <% else %>
+                                        <%= link_to '#', disabled: "disabled", class: "btn btn-danger btn-circle" do %>
+                                            <i class="fa fa-trash"></i>
+                                        <% end %>
+                                    <% end %>
                                 </td>
                             </tr>
                         <% end %>

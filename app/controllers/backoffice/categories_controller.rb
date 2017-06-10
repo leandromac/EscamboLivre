@@ -14,7 +14,7 @@ before_action :set_category, only: [:edit, :update]
         @categories = Category.all
         @category = Category.new(params_category)
         if @category.save
-            redirect_to backoffice_categories_path, notice: "Category (#{@category.description}) was successfully save!"
+            redirect_to backoffice_categories_path, notice: "Category #{@category.description} was successfully save!"
         else
             render :index
         end
@@ -25,7 +25,7 @@ before_action :set_category, only: [:edit, :update]
 
     def update
         if @category.update(params_category)
-            redirect_to backoffice_categories_path, notice: "Category '#{@category.description}' was successfully save!"
+            redirect_to backoffice_categories_path, notice: "Category #{@category.description} was successfully save!"
         else
             render :edit
         end

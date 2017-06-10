@@ -1,5 +1,5 @@
 class Backoffice::AdminsController < BackofficeController
-before_action :set_admin, only: [:edit, :update]
+before_action :set_admin, only: [:edit, :update, :destroy]
 
     def index
         @admins = Admin.all
@@ -14,7 +14,7 @@ before_action :set_admin, only: [:edit, :update]
         @admins = Admin.all
         @admin = Admin.new(params_admin)
         if @admin.save
-            redirect_to backoffice_admins_path, notice: "Admin (#{@admin.email}) was successfully save!"
+            redirect_to backoffice_admins_path, notice: "Admin #{@admin.email} was successfully save!"
         else
             render :index
         end
@@ -36,9 +36,18 @@ before_action :set_admin, only: [:edit, :update]
         # ...fim
 
         if @admin.update(params_admin)
-            redirect_to backoffice_admins_path, notice: "Admin '#{@admin.email}' was successfully save!"
+            redirect_to backoffice_admins_path, notice: "Admin #{@admin.email} was successfully save!"
         else
             render :edit
+        end
+    end
+
+    def destroy
+        admin_email = @admin.email
+        if @admin.destroy
+            redirect_to backoffice_admins_path, notice: "Admin <b>#{admin_email}</b> was successfully delete!"
+        else
+            render :index
         end
     end
 
