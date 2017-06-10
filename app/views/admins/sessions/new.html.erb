@@ -14,6 +14,10 @@
                           <div class="form-group">
                             <%= f.password_field :password, autocomplete: "off", class: "form-control", placeholder: "Senha" %>
                           </div>
+                          <div class="form-group">
+                            <%= f.check_box :remember_me %>
+                            <%= f.label :remember_me %>
+                          </div>
                           <!-- Change this to a button or input when using this as a form -->
                           <%= f.submit "Login", class: "btn btn-lg btn-success btn-block" %>
                           <%= render "admins/shared/links" %>

@@ -24,3 +24,11 @@ puts "Categorias criadas com sucesso!"
 categories.each do |category|
     Category.find_or_create_by!(description: category)
 end
+
+puts "Cadastrando admin padrão..."
+Admin.create!(
+    email: "contato@leandromacedo.com",
+    password: "lfm0607",
+    password_confirmation: "lfm0607",
+    )
+puts "Cadastro realizado com sucesso!"

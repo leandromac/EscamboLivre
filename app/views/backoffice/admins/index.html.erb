@@ -2,7 +2,7 @@
 <div class="col-lg-8">
         <div class="panel panel-default">
             <div class="panel-heading">
-                Categories
+                Admins
             </div>
             <!-- /.panel-heading -->
             <div class="panel-body">
@@ -11,17 +11,17 @@
                         <thead>
                             <tr>
                                 <th>ID</th>
-                                <th>Description</th>
+                                <th>Email</th>
                                 <th class="text-center" style="width: 41px"></th>
                             </tr>
                         </thead>
                         <tbody>
-                        <% @categories.each do |category| %>
+                        <% @admins.each do |admin| %>
                             <tr>
-                                <td><%= category.id %></td>
-                                <td><%= category.description %></td>
+                                <td><%= admin.id %></td>
+                                <td><%= admin.email %></td>
                                 <td>
-                                    <%= link_to edit_backoffice_category_path(category.id), class: "btn btn-warning btn-circle" do %>
+                                    <%= link_to edit_backoffice_admin_path(admin.id), class: "btn btn-warning btn-circle" do %>
                                         <i class="fa fa-pencil"></i>
                                 <% end %>
                                 </td>
@@ -36,4 +36,4 @@
         </div>
         <!-- /.panel -->
     </div>
-<%= render partial: "backoffice/categories/shared/form", locals: {action: "New category"} %>
+<%= render partial: "backoffice/admins/shared/form", locals: {action: "New admin"} %>
