@@ -27,8 +27,10 @@ end
 
 puts "Cadastrando admin padrão..."
 Admin.create!(
+    name: "Leandro Macedo",
     email: "contato@leandromacedo.com",
     password: "lfm0607",
     password_confirmation: "lfm0607",
+    role: 0,
     )
 puts "Cadastro realizado com sucesso!"

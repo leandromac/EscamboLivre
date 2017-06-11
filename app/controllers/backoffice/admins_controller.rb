@@ -14,7 +14,7 @@ before_action :set_admin, only: [:edit, :update, :destroy]
         @admins = Admin.all
         @admin = Admin.new(params_admin)
         if @admin.save
-            redirect_to backoffice_admins_path, notice: "Admin #{@admin.email} was successfully save!"
+            redirect_to backoffice_admins_path, notice: "Admin <b>#{@admin.name}</b> was successfully save!"
         else
             render :index
         end
@@ -36,7 +36,7 @@ before_action :set_admin, only: [:edit, :update, :destroy]
         # ...fim
 
         if @admin.update(params_admin)
-            redirect_to backoffice_admins_path, notice: "Admin #{@admin.email} was successfully save!"
+            redirect_to backoffice_admins_path, notice: "Admin <b>#{@admin.name}</b> was successfully save!"
         else
             render :edit
         end
@@ -54,7 +54,7 @@ before_action :set_admin, only: [:edit, :update, :destroy]
     private
 
         def params_admin
-            params.require(:admin).permit(:email, :password, :password_confirmation)
+            params.require(:admin).permit(:name, :email, :password, :password_confirmation)
         end
 
         def set_admin
