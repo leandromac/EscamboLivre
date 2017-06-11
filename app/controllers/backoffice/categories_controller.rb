@@ -12,8 +12,9 @@ before_action :set_category, only: [:edit, :update]
 
     def create
         @categories = Category.all
-        @category = Category.new(params_category)
-        if @category.save
+
+        @category = CategoryService.create(params_category)
+        unless @category.errors.any?
             redirect_to backoffice_categories_path, notice: "Category <b>#{@category.description}</b> was successfully save!"
         else
             render :index
