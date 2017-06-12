@@ -53,4 +53,6 @@
         </div>
         <!-- /.panel -->
     </div>
+<% if policy(@admins).new? %>
 <%= render partial: "backoffice/admins/shared/form", locals: {action: "New admin"} %>
+<% end %>
