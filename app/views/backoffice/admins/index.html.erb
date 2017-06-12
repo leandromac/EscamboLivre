@@ -20,11 +20,12 @@
                         <% @admins.each do |admin| %>
                             <tr>
                                 <td>
-                                <% if admin.role == 'full_access' %>
-                                    <span class="label label-success"><%= admin.role_type %></span></td>
+                                <% if admin.role_i18n == 'Super user' %>
+                                    <span class="label label-success"><%= admin.role_i18n %></span></td>
                                 <% else %>
-                                    <span class="label label-primary"><%= admin.role_type %></span></td>
+                                    <span class="label label-primary"><%= admin.role_i18n %></span>
                                 <% end %>
+                                </td>
                                 <td><%= admin.name %></td>
                                 <td><%= admin.email %></td>
                                 <td>
@@ -32,7 +33,7 @@
                                         <i class="fa fa-pencil"></i>
                                     <% end %>
                                     <% if current_admin.id != admin.id %>
-                                        <%= link_to backoffice_admin_path(admin.id), method: :delete, class: "btn btn-danger btn-circle", data: {confirm: "Are you sure to want delete: <b>#{admin.email}</b>?"} do %>
+                                        <%= link_to backoffice_admin_path(admin.id), method: :delete, class: "btn btn-danger btn-circle", data: {confirm: t('messages.confirm_with', item: admin.name)} do %>
                                             <i class="fa fa-trash"></i>
                                             <% end %>
                                     <% else %>

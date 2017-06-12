@@ -21,7 +21,8 @@ gem 'coffee-rails', '~> 4.1.0'
 # gem 'therubyracer', platforms: :ruby
 # Rails gem of the Bootstrap based admin theme SB Admin 2. http://dreamingechoes.github.io/boots…
 gem 'bootstrap_sb_admin_base_v2'
-
+# Help ActiveRecord::Enum feature to work fine with I18n and simple_form.
+gem 'enum_help'
 # Faker
 gem 'faker'
 
