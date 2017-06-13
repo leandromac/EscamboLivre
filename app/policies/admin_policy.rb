@@ -1,14 +1,26 @@
 class AdminPolicy < ApplicationPolicy
 
+    def index?
+    end
+
+    def edit?
+        user.full_access?
+    end
+
     def new?
         user.full_access?
     end
 
-    def index?
-    end
-
     def destroy?
         user.full_access?
+    end
+
+    def permitted_attributes
+        if user.full_access?
+            [:name, :email, :role, :password, :password_confirmation]
+        else
+            [:name, :email, :password, :password_confirmation]
+        end
     end
 
     class Scope < Scope
