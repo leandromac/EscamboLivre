@@ -3,7 +3,7 @@
         <div class="col-md-4 col-md-offset-4">
             <div class="login-panel panel panel-default">
                 <div class="panel-heading">
-                    <h3 class="panel-title">Dashboard</h3>
+                    <h3 class="panel-title">Registre-se</h3>
                 </div>
                 <div class="panel-body">
                   <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
@@ -28,3 +28,9 @@
         </div>
     </div>
 </div>
+
+<script>
+  <% flash.each do |key, value| %>
+    $.notify("<%= value %>", "info");
+  <% end %>
+</script>
