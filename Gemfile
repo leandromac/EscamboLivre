@@ -27,7 +27,6 @@ gem 'enum_help'
 gem 'faker'
 # Minimal authorization through OO design and pure Ruby classes
 gem 'pundit'
-
 gem 'jquery-rails'
 # Turbolinks makes following links in your web application faster. Read more: https://github.com/rails/turbolinks
 # gem 'turbolinks'
@@ -58,6 +57,8 @@ group :development, :test do
   gem 'better_errors'
   # Generate Entity-Relationship Diagrams for Rails applications http://voormedia.github.io/rails-erd/
   gem 'rails-erd'
+  # Catches mail and serves it through a dream. http://mailcatcher.me
+  gem 'mailcatcher'
 end
 
 group :development do
