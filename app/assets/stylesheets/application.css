@@ -12,3 +12,7 @@
  *
  *= require_self
  */
+
+.radio, .checkbox {
+    margin-left: 10px;
+}
