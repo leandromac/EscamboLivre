@@ -1,8 +1,12 @@
 $(function(){
-  // Shows Modal
-    $('sendMailModal').modal('hide');
-    $('#subject').val('');
-    $('#message-text').val('');
-    $.notify('Email was successfuly sent', 'success')
+  // Hides the Modal
+  $('#sendMailModal').modal('hide');
+
+  // Set subject and message to empty string
+  $('#subject').val('');
+  $('#message-text').val('');
+
+  // Show Message
+  $.notify('<%= @notify_message%>', "<%= @notify_flag %>");
 
 });

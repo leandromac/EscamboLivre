@@ -55,13 +55,17 @@ class Backoffice::AdminsController < BackofficeController
         end
 
         def params_admin
-        # Permite editar usuário sem a necessidade de mudar a senha...
-        pswd = params[:admin][:password]
-        pswd_confirmation = params[:admin][:password_confirmation]
+            # Permite editar usuário sem a necessidade de mudar a senha...
+            if password_blank?
+                params[:admin].except!(:password, :password_confirmation)
+            end
 
-        if pswd.blank? && pswd_confirmation.blank?
-            params[:admin].delete(:password)
-            params[:admin].delete(:password_confirmation)
+            params.require(:admin).permit(policy(@admin).permitted_attributes)
+        end
+
+        def password_blank?
+            params[:admin][:password].blank? &&
+            params[:admin][:password_confirmation].blank?
         end
         # ...fim
 
