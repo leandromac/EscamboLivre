@@ -10,15 +10,16 @@
                     <table class="table table-striped table-bordered table-hover">
                         <thead>
                             <tr>
+                                <th>ID</th>
                                 <th>Access</th>
                                 <th>Name</th>
-                                <th>Email</th>
-                                <th class="text-center" style="width: 81px"></th>
+                                <th class="text-center" style="width: 115px"></th>
                             </tr>
                         </thead>
                         <tbody>
                         <% @admins.each do |admin| %>
                             <tr>
+                                <td><%= admin.id %></td>
                                 <td>
                                 <% if admin.role_i18n == 'Super user' %>
                                     <span class="label label-success"><%= admin.role_i18n %></span></td>
@@ -27,8 +28,10 @@
                                 <% end %>
                                 </td>
                                 <td><%= admin.name %></td>
-                                <td><%= admin.email %></td>
                                 <td>
+                                    <%= link_to edit_backoffice_send_mail_path(admin), class: "btn btn-primary btn-circle", remote: true do %>
+                                        <i class="fa fa-envelope"></i>
+                                    <% end %>
                                     <%= link_to edit_backoffice_admin_path(admin.id), class: "btn btn-warning btn-circle" do %>
                                         <i class="fa fa-pencil"></i>
                                     <% end %>
@@ -56,3 +59,4 @@
 <% if policy(@admins).new? %>
 <%= render partial: "backoffice/admins/shared/form", locals: {action: "New admin"} %>
 <% end %>
+<%= render partial: 'backoffice/admins/shared/send_mail' %>
