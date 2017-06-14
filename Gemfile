@@ -25,6 +25,8 @@ gem 'bootstrap_sb_admin_base_v2'
 gem 'enum_help'
 # Faker
 gem 'faker'
+# Criar frazes que diz muita coisa mas não diz nada
+gem 'lerolero_generator'
 # Minimal authorization through OO design and pure Ruby classes
 gem 'pundit'
 gem 'jquery-rails'
