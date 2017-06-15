@@ -1,6 +1,6 @@
 namespace :utils do
 
-  desc "Cria administrdores fake"
+  desc "Criando ADMINISTRADORES..."
   task generate_admins: :environment do
 
     puts "Criando admins fakes"
@@ -13,11 +13,11 @@ namespace :utils do
                 role: [0,1,1,1].sample,
             )
         end
-    puts "Admins fakes criado com sucesso!"
+    puts "ADMINISTRADORES criado com sucesso!"
 
   end
 
-  desc "Cria anúncios fake"
+  desc "Criando ANÚNCIOS..."
   task generate_ads: :environment do
 
     puts "Cadastrando Anúncios fake"
@@ -27,9 +27,11 @@ namespace :utils do
                 description: LeroleroGenerator.paragraph(Random.rand(3)),
                 member: Member.all.sample,
                 category: Category.all.sample,
+                price: "#{Random.rand(500)},#{Random.rand(99)}",
+                picture: File.new(Rails.root.join('public', 'templates', 'images-for-ads', "#{Random.rand(9)}.jpg"), 'r')
             )
         end
-    puts "Anúncios cadastrados com sucesso!"
+    puts "ANÚNCIOS criados com sucesso!"
 
   end
 

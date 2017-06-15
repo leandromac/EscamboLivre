@@ -25,6 +25,10 @@ gem 'bootstrap_sb_admin_base_v2'
 gem 'enum_help'
 # Faker
 gem 'faker'
+# Integration of RubyMoney - Money with Rails
+gem 'money-rails'
+# Easy file attachment management for ActiveRecord https://thoughtbot.com/open-source
+gem 'paperclip', '~> 5.0.0'
 # Criar frazes que diz muita coisa mas não diz nada
 gem 'lerolero_generator'
 # Minimal authorization through OO design and pure Ruby classes
