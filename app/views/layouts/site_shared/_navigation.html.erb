@@ -11,7 +11,7 @@
                 </button>
                 <a class="navbar-brand" href="#">
                 <%= link_to site_home_path, class:'navbar-brand' do %>
-                    <span class="text-primary glyphicon glyphicon-shopping-cart" aria-hidden="true"></span> EscamboLivre
+                    <span class="text-primary glyphicon glyphicon-shopping-cart" aria-hidden="true"></span> <%= t('app.name') %>
                 <% end %>
             </div>
             <!-- Collect the nav links, forms, and other content for toggling -->
@@ -28,11 +28,21 @@
                     </li>
                 </ul>
                 <ul class="nav navbar-nav navbar-right">
-                    <li>
-                        <%= link_to backoffice_path do %>
-                            <span class="glyphicon glyphicon-lock" aria-hidden="true"></span>
-                        <% end %>
-                    </li>
+                    <% unless member_signed_in? %>
+                        <li>
+                            <%= link_to "Fazer Login", new_member_session_path %>
+                        </li>
+                        <li>
+                            <%= link_to "Cadastre-se", new_member_registration_path %>
+                        </li>
+                    <% else %>
+                        <li>
+                            <%= link_to current_member.email %>
+                        </li>
+                        <li>
+                            <%= link_to "Sair", destroy_member_session_path, method: :delete %>
+                        </li>
+                    <% end %>
                 </ul>
             </div>
 
