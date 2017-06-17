@@ -1,6 +1,6 @@
 namespace :dev do
 
-  desc "Setub Development"
+  desc "Setup Development"
   task setup: :environment do
 
     images_path = Rails.root.join('public','system')

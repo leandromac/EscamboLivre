@@ -14,10 +14,7 @@ end
 
     namespace :profile do
       resources :dashboard, only: [:index]
-    end
-
-    namespace :profile do
-      resources :ads, only: [:index]
+      resources :ads, only: [:index, :edit, :update, :new, :create, :destroy]
     end
 
   end

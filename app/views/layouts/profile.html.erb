@@ -11,12 +11,11 @@
 
     <title><%= t('app.name') %></title>
 
-    <%= stylesheet_link_tag 'application', media: 'all' %>
-    <%= stylesheet_link_tag 'site', media: 'all' %>
-    <%= stylesheet_link_tag 'site/profile', media: 'all' %>
-    <%= javascript_include_tag 'site/profile' %>
-    <%= javascript_include_tag 'application' %>
-    <%= javascript_include_tag 'site' %>
+    <%= stylesheet_link_tag    'application', media: 'all' %>
+    <%= stylesheet_link_tag    'site', media: 'all' %>
+    <%= stylesheet_link_tag    'site/profile', media: 'all' %>
+
+    <%= csrf_meta_tags %>
     <%= csrf_meta_tags %>
 
 </head>
@@ -40,21 +39,6 @@
                 <li>
                     <%= link_to "Meus Anúncios", site_profile_ads_path %>
                 </li>
-                <li>
-                    <a href="#">Overview</a>
-                </li>
-                <li>
-                    <a href="#">Events</a>
-                </li>
-                <li>
-                    <a href="#">About</a>
-                </li>
-                <li>
-                    <a href="#">Services</a>
-                </li>
-                <li>
-                    <a href="#">Contact</a>
-                </li>
             </ul>
         </div>
         <!-- /#sidebar-wrapper -->
@@ -69,11 +53,14 @@
                 </div>
             </div>
         </div>
-        <!-- /#page-content-wrapper -->
-
     </div>
 
-    <%= render partial: "layouts/site_shared/footer" %>
+
+
+    <%= javascript_include_tag 'application' %>
+    <%= javascript_include_tag 'site' %>
+    <%= javascript_include_tag 'site/profile' %>
+    <%#= javascript_include_tag 'site/profile/ads' %>
 </body>
 
 </html>

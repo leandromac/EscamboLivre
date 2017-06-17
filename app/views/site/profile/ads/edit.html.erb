@@ -1,0 +1,49 @@
+<h1>Editando anúncio</h1>
+<%#= @ad.inspect %>
+
+<%= form_for([:site, :profile, @ad]) do |f| %>
+    <div class="row">
+        <div class="col-md-5">
+            <div class="form-group">
+                <%= f.text_field :title, class: 'form-control', placeholder: 'Título...' %>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="form-group">
+                <%= f.collection_select :category_id, Category.all, :id, :description, {}, { class: 'form-control'} %>
+            </div>
+        </div>
+        <div class="col-md-3">
+            <div class="form-group">
+                <label class="sr-only" for="exampleInputAmount">Amount (in reals)</label>
+                <div class="input-group">
+                  <div class="input-group-addon"><%= @ad.price.currency.symbol %></div>
+                  <%= f.text_field :price, class: 'form-control', placeholder: 'Price...' %>
+                </div>
+              </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-12">
+            <div class="form-group">
+                <%= f.text_area :description, class: 'form-control', placeholder: 'Descrição do anúncio...', rows: '8'%>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-6 jumbotron">
+            <div class="form-group">
+                <h4 class="lead">Mudar a foto do anúncio</h4>
+                <%= f.file_field :picture %>
+            </div>
+        </div>
+        <div class="col-md-6">
+            <div class="form-group text-center">
+                <%= image_tag @ad.picture(:medium), class: 'img-thumbnail' %>
+            </div>
+        </div>
+    </div>
+    <div class="form-group">
+            <%= submit_tag "Atualizar", class: 'btn btn-primary' %>
+        </div>
+<% end %>

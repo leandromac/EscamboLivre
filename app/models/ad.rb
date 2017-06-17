@@ -1,9 +1,11 @@
 class Ad < ActiveRecord::Base
-  belongs_to :category
   belongs_to :member
+  belongs_to :category
 
   # Scopes
-  scope :last_ads, -> { limit(9).order(created_at: :desc) }
+  scope :descending_order, ->(quantity = 9) { limit(quantity).order(created_at: :desc) }
+  scope :to_the, ->(member) { where(member: member) }
+
 
   # Paperclip
   has_attached_file :picture, styles: { large: "800x300#", medium: "320x150#", thumb: "100x100>" }, default_url: "/images/:style/missing.png"
