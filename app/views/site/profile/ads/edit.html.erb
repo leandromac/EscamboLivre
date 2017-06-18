@@ -1,7 +1,7 @@
 <h1>Editando anúncio</h1>
 <%#= @ad.inspect %>
 
-<%= form_for([:site, :profile, @ad]) do |f| %>
+<%= form_for([:site, :profile, @ad], html: { multipart: true }) do |f| %>
     <div class="row">
         <div class="col-md-5">
             <div class="form-group">
@@ -17,7 +17,7 @@
             <div class="form-group">
                 <label class="sr-only" for="exampleInputAmount">Amount (in reals)</label>
                 <div class="input-group">
-                  <div class="input-group-addon"><%= @ad.price.currency.symbol %></div>
+                  <div class="input-group-addon">Valor <%= @ad.price.currency.symbol %></div>
                   <%= f.text_field :price, class: 'form-control', placeholder: 'Price...' %>
                 </div>
               </div>
