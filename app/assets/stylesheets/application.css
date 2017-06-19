@@ -11,8 +11,18 @@
  * file per style scope.
  *
  *= require_self
+ *= require animate-css
  */
 
 .radio, .checkbox {
     margin-left: 10px;
+}
+/* BOOTSTRAP NOTIFY */
+[data-notify="progressbar"] {
+    margin-bottom: 0px;
+    position: absolute;
+    bottom: 0px;
+    left: 0px;
+    width: 100%;
+    height: 5px;
 }
