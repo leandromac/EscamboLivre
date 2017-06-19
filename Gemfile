@@ -25,6 +25,8 @@ gem 'bootstrap_sb_admin_base_v2'
 gem 'enum_help'
 # Faker
 gem 'faker'
+# The safe Markdown parser, reloaded.
+gem 'redcarpet'
 # Integration of RubyMoney - Money with Rails
 gem 'money-rails'
 # jQuery UI for the Rails asset pipeline

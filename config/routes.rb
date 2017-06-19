@@ -17,6 +17,8 @@ end
       resources :ads, only: [:index, :edit, :update, :new, :create, :destroy]
     end
 
+    resources :ad_detail, only: [:show]
+
   end
 
   devise_for :admins, :skip => [:registrations]
