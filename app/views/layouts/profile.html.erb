@@ -58,15 +58,17 @@
         </div>
     </div>
 
-    <% if notice %>
-        <%= javascript_tag "$.notify('#{notice}', 'success');" %>
-    <% end %>
-
 
     <%= javascript_include_tag 'application' %>
     <%= javascript_include_tag 'site' %>
     <%= javascript_include_tag 'site/profile' %>
-    <%#= javascript_include_tag 'site/profile/ads' %>
+    <%= javascript_include_tag 'site/profile/ads' %>
+    <%= yield 'javascripts' %>
+
+    <% if notice %>
+        <%= javascript_tag "$.notify('#{notice}', 'success');" %>
+    <% end %>
+
 </body>
 
 </html>

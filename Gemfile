@@ -27,6 +27,8 @@ gem 'enum_help'
 gem 'faker'
 # Integration of RubyMoney - Money with Rails
 gem 'money-rails'
+# jQuery UI for the Rails asset pipeline
+gem 'jquery-ui-rails'
 # Easy file attachment management for ActiveRecord https://thoughtbot.com/open-source
 gem 'paperclip', '~> 5.0.0'
 # Criar frazes que diz muita coisa mas não diz nada

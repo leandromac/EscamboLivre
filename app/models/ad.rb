@@ -2,7 +2,8 @@ class Ad < ActiveRecord::Base
   belongs_to :member
   belongs_to :category
 
-  validates_presence_of :title, :description, :category, :price, :picture
+  validates :title, :description, :category, :picture, :finish_date, presence: true
+  validates :price, numericality: { greater_than: 0 }
 
 
   # Scopes
