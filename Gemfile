@@ -57,6 +57,8 @@ source 'https://rails-assets.org' do
   gem 'rails-assets-bootstrap.growl'
   gem 'rails-assets-animate-css'
   gem 'rails-assets-bootbox'
+  gem 'rails-assets-bootstrap-markdown'
+  gem 'rails-assets-marked'
 end
 
 group :development, :test do

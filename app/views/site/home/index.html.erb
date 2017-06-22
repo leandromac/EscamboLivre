@@ -6,7 +6,7 @@
                 <p class="lead">Categorias</p>
                 <div class="list-group">
                 <% @categories.each do | category| %>
-                    <a href="#" class="list-group-item"><%= category.description %></a>
+                    <a href="#" class="list-group-item"><%= category.description %> <small class="text-muted">(<%= category.ads_count %>)</small></a>
                 <% end %>
                 </div>
             </div>
@@ -56,7 +56,7 @@
                                 </h4>
                                 <h4><%= link_to truncate(ad.title, length: 20), site_ad_detail_path(ad), remote: true %>
                                 </h4>
-                                <p><%= truncate(ad.description, length: 100) %><br>
+                                <p><%= truncate(ad.description_short, length: 100) %><br>
                                 <a target="_blank" href="http://www.bootsnipp.com">Bootsnipp - http://bootsnipp.com</a>.</p>
                             </div>
                             <div class="ratings">
