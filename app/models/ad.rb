@@ -1,4 +1,7 @@
 class Ad < ActiveRecord::Base
+
+  before_save :md_to_html
+
   belongs_to :member
   belongs_to :category
 
@@ -16,4 +19,25 @@ class Ad < ActiveRecord::Base
   validates_attachment_content_type :picture, content_type: /\Aimage\/.*\z/
   # Gem money_rails
   monetize :price_cents
+
+  def md_to_html(text)
+    options = {
+        filter_html: true,
+        link_attributes: {
+            rel: "nofollow",
+            target: "_blank"
+        }
+    }
+
+    extensions = {
+        space_after_headers: true,
+        autolink: true
+    }
+
+    renderer = Redcarpet::Render::HTML.new(options)
+    markdown = Redcarpet::Markdown.new(renderer, extensions)
+
+    self.description = markdown.render(self.description_md).html_safe
+  end
+
 end

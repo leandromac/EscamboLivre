@@ -23,8 +23,6 @@ gem 'coffee-rails', '~> 4.1.0'
 gem 'bootstrap_sb_admin_base_v2'
 # Help ActiveRecord::Enum feature to work fine with I18n and simple_form.
 gem 'enum_help'
-# Faker
-gem 'faker'
 # The safe Markdown parser, reloaded.
 gem 'redcarpet'
 # Integration of RubyMoney - Money with Rails
@@ -70,6 +68,10 @@ group :development, :test do
   gem 'rails-erd'
   # Catches mail and serves it through a dream. http://mailcatcher.me
   gem 'mailcatcher'
+  # Doctor Ipson Markdown generator
+  gem 'doctor_ipsum'
+  # Faker
+  gem 'faker'
 end
 
 group :development do
