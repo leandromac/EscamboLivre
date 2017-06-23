@@ -6,9 +6,10 @@
 
         <div id="home-detail" class="col-md-9">
 
-            <%= render partial: "site/shared/carousel" %>
-
             <div class="row">
+                <div class="well well-success">
+                    <h4><%= @ads.first.category.description %></h4>
+                </div>
                 <%= render partial: "site/shared/ads" %>
             </div>
 
