@@ -22,7 +22,7 @@ categories = [
 puts "Categorias criadas com sucesso!"
 
 categories.each do |category|
-    Category.find_or_create_by!(description: category)
+    Category.friendly.find_or_create_by!(description: category)
 end
 
 puts "Cadastrando admin padrão..."

@@ -31,6 +31,8 @@ gem 'money-rails'
 gem 'jquery-ui-rails'
 # Easy file attachment management for ActiveRecord https://thoughtbot.com/open-source
 gem 'paperclip', '~> 5.0.0'
+# FriendlyId is the “Swiss Army bulldozer” of slugging and permalink plugins for ActiveRecord
+gem 'friendly_id'
 # Criar frazes que diz muita coisa mas não diz nada
 gem 'lerolero_generator'
 # Minimal authorization through OO design and pure Ruby classes

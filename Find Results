@@ -1,0 +1,34 @@
+Searching 2888 files for "Category.find"
+
+/Users/leandromacedo/www/Projects/EscamboLivre/app/controllers/backoffice/categories_controller.rb:
+   40
+   41          def set_category
+   42:             @category = Category.find(params[:id])
+   43          end
+   44
+
+/Users/leandromacedo/www/Projects/EscamboLivre/db/seeds.rb:
+   23
+   24  categories.each do |category|
+   25:     Category.find_or_create_by!(description: category)
+   26  end
+   27
+
+
+
+Searching 2888 files for "Category.find"
+
+/Users/leandromacedo/www/Projects/EscamboLivre/app/controllers/backoffice/categories_controller.rb:
+   40
+   41          def set_category
+   42:             @category = Category.friendly.find(params[:id])
+   43          end
+   44
+
+/Users/leandromacedo/www/Projects/EscamboLivre/db/seeds.rb:
+   23
+   24  categories.each do |category|
+   25:     Category.friendly.find_or_create_by!(description: category)
+   26  end
+   27
+

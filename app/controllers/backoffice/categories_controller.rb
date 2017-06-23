@@ -39,7 +39,7 @@ before_action :set_category, only: [:edit, :update]
         end
 
         def set_category
-            @category = Category.find(params[:id])
+            @category = Category.friendly.find(params[:id])
         end
 
 end
