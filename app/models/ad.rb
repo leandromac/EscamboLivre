@@ -10,10 +10,16 @@ class Ad < ActiveRecord::Base
 
 
   # Scopes
-  scope :descending_order, ->(quantity = 9) { limit(quantity).order(created_at: :desc) }
+  scope :descending_order, ->(quantity = 9, page = 1) {
+    limit(quantity).order(created_at: :desc).page(page).per(9)
+  }
+
+  scope :search, ->(q, page = 1) {
+    where("lower(title) LIKE ?", "%#{q.downcase}%").page(page).per(9)
+  }
+
   scope :to_the, ->(member) { where(member: member) }
   scope :by_category, ->(id) { where(category: id) }
-  scope :search, ->(q) { where("lower(title) LIKE ?", "%#{q.downcase}%") }
 
 
   # Paperclip
