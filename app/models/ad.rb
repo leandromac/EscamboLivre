@@ -1,21 +1,25 @@
 class Ad < ActiveRecord::Base
 
+  # Constante
+  QTT_PER_PG = 9
+
   before_save :md_to_html
 
   belongs_to :member
   belongs_to :category, counter_cache: true
+  has_many :comments
 
   validates :title, :description_md, :description_short, :category, :picture, :finish_date, presence: true
   validates :price, numericality: { greater_than: 0 }
 
 
   # Scopes
-  scope :descending_order, ->(quantity = 9, page = 1) {
-    limit(quantity).order(created_at: :desc).page(page).per(9)
+  scope :descending_order, ->(page) {
+    order(created_at: :desc).page(page).per(QTT_PER_PG)
   }
 
-  scope :search, ->(q, page = 1) {
-    where("lower(title) LIKE ?", "%#{q.downcase}%").page(page).per(9)
+  scope :search, ->(q, page) {
+    where("lower(title) LIKE ?", "%#{q.downcase}%").page(page).per(QTT_PER_PG)
   }
 
   scope :to_the, ->(member) { where(member: member) }

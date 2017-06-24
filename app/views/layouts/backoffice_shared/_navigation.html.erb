@@ -65,6 +65,13 @@
                                 <i class="fa fa-users fa-fw"></i> Admins
                             <% end %>
                         </li>
+                        <% if Rails.env.development? %>
+                            <li>
+                                <%= link_to backoffice_diagrams_path do %>
+                                    <i class="fa fa-database fa-fw"></i> Diagrama ER
+                                <% end %>
+                            </li>
+                        <% end %>
                         <!-- LEVEL MENU
                         <li>
                             <a href="#"><i class="fa fa-bar-chart-o fa-fw"></i> Charts<span class="fa arrow"></span></a>
