@@ -20,8 +20,8 @@ end
       resources :ads, only: [:index, :edit, :update, :new, :create, :destroy]
     end
 
-    resources :ad_detail, only: [:show]
-    resources :categories, only: [:show]
+    resources :ad_detail, only: [:index, :show]
+    resources :categories, only: [:index, :show]
   end
 
   devise_for :admins, :skip => [:registrations]

@@ -6,7 +6,6 @@
 
 sudo apt-get update
 sudo apt-get install imagemagick
-```
 
 * Graphviz (http://www.graphviz.org) - Apenas para ambiente de desenvolvimento
 
@@ -14,5 +13,4 @@ sudo apt-get install imagemagick
 
 sudo apt-get update
 sudo apt-get install graphviz
-```
 
