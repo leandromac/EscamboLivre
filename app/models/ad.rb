@@ -26,7 +26,7 @@ class Ad < ActiveRecord::Base
   }
 
   scope :to_the, ->(member) { where(member: member) }
-  scope :by_category, ->(id) { where(category: id) }
+  scope :by_category, ->(id, page) { where(category: id).page(page).per(QTT_PER_PG) }
 
 
   # Paperclip
