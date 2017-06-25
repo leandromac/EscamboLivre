@@ -6,16 +6,12 @@
         </h4>
         <p><%= md_to_html @ad.description %></p>
     </div>
+</div>
+
+<div class="well well-sm">
     <div class="ratings">
-        <p class="pull-right">3 reviews</p>
-        <p>
-            <span class="glyphicon glyphicon-star"></span>
-            <span class="glyphicon glyphicon-star"></span>
-            <span class="glyphicon glyphicon-star"></span>
-            <span class="glyphicon glyphicon-star"></span>
-            <span class="glyphicon glyphicon-star-empty"></span>
-            4.0 stars
-        </p>
+        <p class="pull-right"><%= @ad.comments.count %> Comentários</p>
+        <%= rating_for @ad, 'quality' %>
     </div>
 </div>
 
@@ -28,9 +24,7 @@
               Deixe um comentário
             </button>
         <% else %>
-            <button type="button" class="btn btn-success" data-toggle="modal" data-target="#ComentModal" disabled="disabled">
-                Faça login para deixar um comentário
-            </button>
+            <%= link_to "Efetue login para comentar", member_session_path, class: "btn btn-success" %>
         <% end %>
 
     </div>

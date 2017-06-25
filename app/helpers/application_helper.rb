@@ -20,4 +20,8 @@ module ApplicationHelper
         markdown.render(text).html_safe
     end
 
+    def current_user
+        current_member
+    end
+
 end

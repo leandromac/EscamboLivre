@@ -40,6 +40,8 @@ gem 'kaminari'
 gem 'kaminari-i18n'
 # Criar frazes que diz muita coisa mas não diz nada
 gem 'lerolero_generator'
+# A Ruby Gem that wraps the functionality of jQuery Raty library, and provides optional IMDB style rating.
+gem 'ratyrate'
 # Minimal authorization through OO design and pure Ruby classes
 gem 'pundit'
 gem 'jquery-rails'

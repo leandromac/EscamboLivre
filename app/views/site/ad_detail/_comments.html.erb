@@ -1,11 +1,9 @@
 <% @ad.comments.each do |comment| %>
 <div class="row">
     <div class="col-md-12">
-        <span class="glyphicon glyphicon-star"></span>
-        <span class="glyphicon glyphicon-star"></span>
-        <span class="glyphicon glyphicon-star"></span>
-        <span class="glyphicon glyphicon-star"></span>
-        <span class="glyphicon glyphicon-star-empty"></span>
+        <% if (member_signed_in?) && (comment.member.id == current_member.id) %>
+            <%= rating_for @ad, 'quality' %>
+        <% end %>
         <%= comment.member.email %>
         <span class="pull-right"><%= l comment.created_at %></span>
         <p><%= comment.body %></p>

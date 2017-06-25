@@ -3,6 +3,9 @@ class Ad < ActiveRecord::Base
   # Constante
   QTT_PER_PG = 9
 
+  # RatyRate Gem
+  ratyrate_rateable 'quality'
+
   before_save :md_to_html
 
   belongs_to :member
