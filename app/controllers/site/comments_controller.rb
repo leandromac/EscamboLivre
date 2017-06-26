@@ -5,7 +5,7 @@ class Site::CommentsController < ApplicationController
         @comment = Comment.new(comment_params)
         @comment.member = current_member
 
-        if @comment_save
+        if @comment.save
             redirect_to site_ad_detail_path(@comment.ad_id), notice: "Comentário adicionado!"
         else
             redirect_to site_ad_detail_path(@comment.ad_id), notice: "Erro ao adicionar comentário!"
