@@ -72,13 +72,6 @@
                     <div class="panel-body" >
                        <%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: {class: 'form-horizontal', role: 'form'}) do |f| %>
 
-                          <% unless devise_error_messages!.blank? %>
-                            <div id="signupalert" class="alert alert-danger">
-                                <p><%= devise_error_messages! %></p>
-                                <span></span>
-                            </div>
-                          <% end %>
-
                             <div class="form-group">
                                 <label for="email" class="col-md-3 control-label">Email</label>
                                 <div class="col-md-9">
@@ -122,7 +115,7 @@
                                 <!-- Button -->
                                 <div class="col-md-offset-3 col-md-9">
                                     <%= f.submit "Sign up", class: 'btn btn-info' %>
-                                    <button id="btn-fbsignup" type="button" class="btn btn-primary pull-right"><i class="icon-facebook"></i>   Sign Up with Facebook</button>
+                                    <button id="btn-fbsignup" type="button" class="btn btn-primary pull-right" disabled="disabled"><i class="icon-facebook"></i>   Sign Up with Facebook</button>
                                 </div>
                             </div>
 
@@ -147,3 +140,15 @@
                 </div>
      </div>
 </div>
+
+<% flash.each do |key, value| %>
+  <%= javascript_tag "$.notify({ message: '#{value}'}, {type: 'danger',
+        placement: { from: 'top', align: 'center' }});" %>
+<% end %>
+
+<% unless devise_error_messages!.blank? %>
+  <% resource.errors.full_messages.each do |message| %>
+    <%= javascript_tag "$.notify({ message: '#{message}'}, {type: 'danger',
+        placement: { from: 'top', align: 'center' }});" %>
+  <% end %>
+<% end %>
