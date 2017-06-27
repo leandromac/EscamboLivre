@@ -10,8 +10,8 @@ Rails.application.configure do
   # WebConsole Rails
   config.web_console.whitelisted_ips = ENV['TRUSTED_IP']
 
-  # Devise email configuration
-  # config.action_mailer.default_url_options = { host: 'localhost', port: 3000 }
+  # Devise configuration
+  config.action_mailer.default_url_options = { host: 'localhost', port: 3000 }
 
   # MailCacher
   config.action_mailer.delivery_method = :smtp

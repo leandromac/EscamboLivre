@@ -25,7 +25,7 @@ categories.each do |category|
     Category.friendly.find_or_create_by!(description: category)
 end
 
-puts "Cadastrando admin padrão..."
+puts "Cadastrando ADMIN padrão..."
 Admin.create!(
     name: "Leandro Macedo",
     email: "contato@leandromacedo.com",
@@ -33,4 +33,18 @@ Admin.create!(
     password_confirmation: "lfm0607",
     role: 0,
     )
-puts "Cadastro realizado com sucesso!"
+puts "ADMIN padrão cadastrado com sucesso!"
+
+puts "Cadastrando MEMBRO padrão..."
+member = Member.new(
+    email: "membro@membro.com",
+    password: "lfm0607",
+    password_confirmation: "lfm0607",
+    )
+    member.build_profile_member
+
+    member.profile_member.first_name = Faker::Name.first_name
+    member.profile_member.second_name = Faker::Name.last_name
+
+    member.save!
+puts "MEMBRO padrão cadastrado com sucesso!"
