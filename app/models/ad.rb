@@ -27,7 +27,7 @@ class Ad < ActiveRecord::Base
 
   scope :to_the, ->(member) { where(member: member) }
   scope :by_category, ->(id, page) { where(category: id).page(page).per(QTT_PER_PG) }
-
+  scope :random, -> (quantity) { limit(quantity).order("RANDOM()") }
 
   # Paperclip
   has_attached_file :picture, styles: { large: "800x300#", medium: "320x150#", thumb: "100x100>" }, default_url: "/images/:style/missing.png"
@@ -53,6 +53,14 @@ class Ad < ActiveRecord::Base
     markdown = Redcarpet::Markdown.new(renderer, extensions)
 
     self.description = markdown.render(self.description_md).html_safe
+  end
+
+  def second
+    self[1]
+  end
+
+  def third
+    self[2]
   end
 
 end
