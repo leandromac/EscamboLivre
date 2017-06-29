@@ -83,6 +83,10 @@ group :development, :test do
   gem 'doctor_ipsum'
   # Faker
   gem 'faker'
+  # Capistrano
+  gem 'capistrano', '~> 3.7'
+  gem 'capistrano-bundler', '~> 1.2'
+  gem 'capistrano-rails', '~> 1.2'
 end
 
 group :development do
