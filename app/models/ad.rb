@@ -1,5 +1,8 @@
 class Ad < ActiveRecord::Base
 
+  # Statys Payment
+  enum status: [:active, :processing, :sold]
+
   # Constante
   QTT_PER_PG = 9
 
