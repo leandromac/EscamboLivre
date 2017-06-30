@@ -9,4 +9,5 @@ PagSeguro.configure do |config|
   end
 
   config.encoding     = "UTF-8" # ou "ISO-8859-1"
+  config.timeout = 90
 end
