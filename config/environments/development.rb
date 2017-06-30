@@ -1,4 +1,13 @@
 Rails.application.configure do
+
+  # Rack CORS Configuration
+  config.middleware.insert_before 0, Rack::Cors do
+    allow do
+      origins '*'
+      resource '*', :headers => :any, :methods => [:get, :post, :options]
+    end
+  end
+
   # Settings specified here will take precedence over those in config/application.rb.
 
   # Foreman fix log
@@ -54,4 +63,5 @@ Rails.application.configure do
 
   # Raises error for missing translations
   # config.action_view.raise_on_missing_translations = true
+
 end
