@@ -57,6 +57,9 @@ gem "pagseguro-oficial", "~> 2.5.0"
 # gem 'bcrypt', '~> 3.1.7'
 # Prawn Handler for Rails. Handles and registers pdf formats.
 gem 'prawn-rails'
+# PDF generator (from HTML) plugin for Ruby on Rails http://mileszs.com/blog/2009/06/17/wi…
+gem 'wicked_pdf'
+gem 'wkhtmltopdf-binary'
 # Use Unicorn as the app server
 # gem 'unicorn'
 

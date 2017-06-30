@@ -22,6 +22,7 @@
         <h4><a href="#"><%= @ad.title %></a>
         </h4>
         <p><%= @ad.description %></p>
+        <p><%= link_to 'Gerar PDF', site_ad_detail_path(format: :pdf), class: 'btn btn-info' %></p>
     </div>
 </div>
 

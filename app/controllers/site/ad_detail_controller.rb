@@ -4,5 +4,12 @@ class Site::AdDetailController < SiteController
         @categories = Category.order_by_description
         @ad = Ad.find(params[:id])
 
+      respond_to do |format|
+          format.html
+          format.pdf do
+            render pdf: "ad_detail",   # Excluding ".pdf" extension.
+            layout: 'pdf'
+          end
+        end
     end
 end
