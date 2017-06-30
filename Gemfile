@@ -55,7 +55,8 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 gem "pagseguro-oficial", "~> 2.5.0"
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
-
+# Prawn Handler for Rails. Handles and registers pdf formats.
+gem 'prawn-rails'
 # Use Unicorn as the app server
 # gem 'unicorn'
 
