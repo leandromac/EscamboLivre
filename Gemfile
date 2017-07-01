@@ -66,6 +66,8 @@ gem 'wkhtmltopdf-binary'
 gem "chartkick"
 # Intelligent search made easy with Rails and Elasticsearch
 gem 'searchkick'
+# Simple, efficient background processing for Ruby http://sidekiq.org
+gem 'sidekiq'
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 
