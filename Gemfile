@@ -62,6 +62,8 @@ gem 'wicked_pdf'
 gem 'wkhtmltopdf-binary'
 # Use Unicorn as the app server
 # gem 'unicorn'
+# Create beautiful JavaScript charts with one line of Ruby http://chartkick.com
+gem "chartkick"
 
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development

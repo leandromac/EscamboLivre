@@ -1,1 +1,25 @@
-<h1>BackOffice Page</h1>
+<h1>Dashboard</h1>
+<div class="panel panel-info">
+  <div class="panel-heading">PIE</div>
+  <%= pie_chart @categories_groups %>
+</div>
+
+<div class="panel panel-info">
+  <div class="panel-heading">COLUMN</div>
+  <%= column_chart @categories_groups %>
+</div>
+
+<div class="panel panel-info">
+  <div class="panel-heading">BAR</div>
+  <%= bar_chart @categories_groups %>
+</div>
+
+<div class="panel panel-info">
+  <div class="panel-heading">AREA</div>
+  <%= area_chart @categories_groups %>
+</div>
+
+<div class="panel panel-info">
+  <div class="panel-heading">LINE</div>
+  <%= line_chart @categories_groups %>
+</div>

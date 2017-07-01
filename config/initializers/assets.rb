@@ -13,6 +13,7 @@ Rails.application.config.assets.precompile += %w(
     site/profile.js
     site.js
     backoffice.js
+    charts.js
 )
 
 Rails.application.config.assets.precompile += %w(

@@ -15,6 +15,7 @@
 //= require bootstrap.growl
 
 
+
 /* Spin Ajax load... */
 $(document).ready(function() {
     $(document)
