@@ -64,7 +64,8 @@ gem 'wkhtmltopdf-binary'
 # gem 'unicorn'
 # Create beautiful JavaScript charts with one line of Ruby http://chartkick.com
 gem "chartkick"
-
+# Intelligent search made easy with Rails and Elasticsearch
+gem 'searchkick'
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 

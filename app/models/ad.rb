@@ -1,4 +1,5 @@
 class Ad < ActiveRecord::Base
+  searchkick
 
   # Statys Payment
   enum status: [:active, :processing, :sold]
@@ -24,9 +25,9 @@ class Ad < ActiveRecord::Base
     order(created_at: :desc).page(page).per(QTT_PER_PG)
   }
 
-  scope :search, ->(q, page) {
-    where("lower(title) LIKE ?", "%#{q.downcase}%").page(page).per(QTT_PER_PG)
-  }
+#  scope :search, ->(q, page) {
+#    where("lower(title) LIKE ?", "%#{q.downcase}%").page(page).per(QTT_PER_PG)
+#  }
 
   scope :to_the, ->(member, page) { where(member: member) }
   scope :by_category, ->(id, page) { where(category: id).page(page).per(QTT_PER_PG) }
